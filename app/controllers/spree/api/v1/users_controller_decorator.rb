@@ -22,7 +22,7 @@ Spree::Api::V1::UsersController.class_eval do
       @user.generate_spree_api_key! if @user.spree_api_key.blank?
       render 'show'
     else
-      render  :nothing => true, status: 401
+      head :unauthorized
     end
   end
 end
